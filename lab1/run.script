@@ -1,12 +1,0 @@
-Script started on 2015年03月10日 (週二) 15時56分08秒
-]0;F74014041@2015cpp: ~/lab1F74014041@2015cpp:~/lab1$ git clone https://github.com/LittleWhiteYA/lab1.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Config -l[K[2Pwhoami; pwdgit config -llone https://github.com/LittleWhiteYA/lab1.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kgit clone https://github.com/LittleWhiteYA/lab1.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Config -l[K[2Pwhoami; pwd./ch1 abcddefg++ -Dtest -o ch1 ch1.cpp[12P./ch1 abcddef[2Pwhoami; pwdgit config -llone https://github.com/LittleWhiteYA/lab1.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kg__ [K[K[K++ -o lab1 lab1.script
-/usr/bin/ld:lab1.script: file format not recognized; treating as linker script
-/usr/bin/ld:lab1.script:1: syntax error
-collect2: ld returned 1 exit status
-]0;F74014041@2015cpp: ~/lab1F74014041@2015cpp:~/lab1$ g++ -o lab1 lab1.script[K[K[K[K[K[Kcpp
-]0;F74014041@2015cpp: ~/lab1F74014041@2015cpp:~/lab1$ ./labf1[K[K1
-input: 22
-22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1 
-]0;F74014041@2015cpp: ~/lab1F74014041@2015cpp:~/lab1$ vi [K[K[Kexit
-
-Script done on 2015年03月10日 (週二) 15時56分35秒
