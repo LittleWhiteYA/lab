@@ -19,6 +19,7 @@ public:
     void setElement(int index, int value);
     int judge;
     void Solve();   //main
+    void GiveQuestion();
 
 private:
     bool checkUnity(int arr[]);

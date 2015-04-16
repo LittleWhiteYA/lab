@@ -31,7 +31,7 @@ int Sudoku::getFirstZeroIndex(){
 }
 void Sudoku::ReadIn(){
     //ifstream infile;
-    //infile.open("infile4.txt",ios::in);
+    //infile.open("12x12.txt",ios::in);
 
     int num[sudokuSize];
 
@@ -43,7 +43,7 @@ void Sudoku::ReadIn(){
 
     setMap(num);
 
-    //:infile.close();
+    //infile.close();
 
 }
 
@@ -393,6 +393,8 @@ bool Sudoku::Solve_main(){
         for(set_num=1; set_num<=9; set_num++)
         {
             //out << "set_num = " << set_num << ", Zero = " << FirstZero << endl;
+            if(judge == 2)
+                break;
             /*if(set_num == 9 && FirstZero == 18)
             {
                 for(int i=0; i<sudokuSize; i++)
@@ -442,8 +444,8 @@ bool Sudoku::Solve_main(){
 }
 void Sudoku::Solve(){
 
-    clock_t start, finish;
-    start = clock();
+    //clock_t start, finish;
+    //start = clock();
 
     int i;
     for(i=0; i<sudokuSize; i++)
@@ -472,12 +474,11 @@ void Sudoku::Solve(){
         }
     }
 
-
-    finish = clock();
-    double duration = finish-start;
-    cout << "start time = " << start << endl;
-    cout << "finish time = " << finish << endl;
-    cout << "duration = " << duration << endl;
+    //finish = clock();
+    //double duration = finish-start;
+    //cout << "start time = " << start << endl;
+    //cout << "finish time = " << finish << endl;
+    //cout << "duration = " << duration << endl;
 
 }
 
@@ -507,10 +508,79 @@ bool Sudoku::Check_Dark(int Check_map[]){
             k = k+24;
         }
     }
-    cout << "num=" << num << endl;
+    //cout << "num=" << num << endl;
     if(num != 4)
         return false;
 
     return true;
+}
+
+void Sudoku::GiveQuestion(){
+    int Question_map[sudokuSize] =
+    {
+         8, 0, 0, 0, 5, 0, 0, 0, 9,-1,-1,-1,
+         0, 0, 3, 6, 0, 0, 0, 7, 0,-1,-1,-1,
+         0, 7, 0, 0, 9, 0, 2, 0, 0,-1,-1,-1,
+         0, 5, 0, 0, 0, 7,-1,-1,-1, 0, 6, 0,
+         0, 0, 0, 0, 4, 5,-1,-1,-1, 7, 0, 0,
+         0, 0, 0, 1, 0, 0,-1,-1,-1, 0, 3, 0,
+         0, 0, 1,-1,-1,-1, 0, 6, 8, 0, 0, 9,
+         0, 0, 8,-1,-1,-1, 0, 1, 0, 5, 4, 2,
+         0, 9, 5,-1,-1,-1, 4, 0, 7, 0, 0, 0,
+        -1,-1,-1, 0, 0, 6, 0, 5, 0, 8, 0, 0,
+        -1,-1,-1, 5, 0, 0, 0, 0, 0, 0, 0, 0,
+        -1,-1,-1, 3, 0, 1, 7, 0, 0, 6, 0, 4
+    };
+
+    int random1, random2;
+    int a=0,b=0;
+    srand(time(NULL));
+    random1 = rand()%9+1;
+    random2 = rand()%9+1;
+    while(random2 == random1)
+        random2 = rand()%9+1;
+
+
+    int first_rand_Index[12]={};
+    int second_rand_Index[12]={};
+    for(int i=0; i<sudokuSize; i++)
+    {
+        if(random1 == Question_map[i])
+        {
+            //cout << random1 << " " << i << endl;
+            first_rand_Index[a] = i;
+            a++;
+        }
+
+
+        else if(random2 == Question_map[i])
+        {
+            //cout << random2 << "  " << i << endl;
+            second_rand_Index[b] = i;
+            b++;
+        }
+    }
+    //cout << random1 << " " << random2 << endl;
+    a=0;
+    while(first_rand_Index[a] != 0)
+    {
+        Question_map[first_rand_Index[a]] = random2;
+        a++;
+    }
+
+    b=0;
+    while(second_rand_Index[b] != 0)
+    {
+        Question_map[second_rand_Index[b]] = random1;
+        b++;
+    }
+
+    for(int i=0; i<sudokuSize; i++)
+    {
+        cout << Question_map[i] << " ";
+        if(i%length==length-1)
+            cout << endl;
+    }
+
 }
 
