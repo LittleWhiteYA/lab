@@ -1,0 +1,8 @@
+Clock: Clock_main.o Clock.o
+	g++ -o Clock Clock_main.o Clock.o
+
+Clock_main.o: Clock_main.cpp Clock.h
+	g++ -c Clock_main.cpp
+
+Clock.o: Clock.cpp Clock.h
+	g++ -c Clock.cpp
